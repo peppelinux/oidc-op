@@ -59,6 +59,13 @@ SESSION_KEYS:
 
 
 op:
+  # optionally you can set your custom DBs
+  # client_db:
+    # class: oidcendpoint.in_memory_db.InMemoryDataBase
+  # session_db:
+    # class: oidcendpoint.in_memory_db.InMemoryDataBase
+  # sso_db:
+    # class: oidcendpoint.sso_db.SSODb
   server_info:
     issuer: *base_url
     verify_ssl: False
@@ -251,7 +258,7 @@ op:
             S256
             S384
             S512
-      
+
       claims:
         function: oidcendpoint.oidc.add_on.custom_scopes.add_custom_scopes
         kwargs:
